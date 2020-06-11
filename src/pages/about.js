@@ -3,13 +3,11 @@ import Header from "../components/header"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-export default function Home() {
+export default function About() {
   return (
     <Layout>
-      <SEO title="Barry Sweeney" />
-      <Header headerText="Barry Sweeney" />
-      <p>I'm a full stack web developer</p>
-      <p>Learning is my jam</p>
+      <SEO title="About me" />
+      <Header headerText="About me" />
     </Layout>
   )
 }
