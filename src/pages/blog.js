@@ -12,9 +12,9 @@ export default function Blog({ data }) {
 
       {data.allMarkdownRemark.edges.map(({ node }) => (
         <div key={node.id}>
-          <Link to={node.fields.slug}>
+          <Link to={node.fields.slug} style={{ color: `black` }}>
             <h3>{node.frontmatter.title}</h3>
-            <span style={{ color: `grey` }}>{node.frontmatter.date}</span>
+            {node.frontmatter.date}
             <p>{node.frontmatter.description}</p>{" "}
           </Link>
         </div>
