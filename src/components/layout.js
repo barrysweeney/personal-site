@@ -14,6 +14,12 @@ const ListLink = props => (
   </li>
 )
 
+const SocialLink = props => (
+  <li style={{ display: `inline-block`, marginRight: `1rem` }}>
+    <a href={props.to}>{props.children}</a>
+  </li>
+)
+
 export default function Layout({ children }) {
   return (
     <div
@@ -40,22 +46,20 @@ export default function Layout({ children }) {
       <footer
         style={{ gridRow: 4, borderTop: `1px solid grey`, padding: `10px` }}
       >
-        <a href="https://github.com/barrysweeney">
-          <FaGithub />
-        </a>
-
-        <a href="https://twitter.com/barrysweeneydev">
-          <FaTwitter />
-        </a>
-
-        <a href="https://www.linkedin.com/in/barry-sweeney-819022189/">
-          <FaLinkedin />
-        </a>
-
-        <a href="https://stackoverflow.com/users/story/9472445">
-          <FaStackOverflow />
-        </a>
-
+        <ul style={{ listStyle: `none`, float: `right` }}>
+          <SocialLink to="https://github.com/barrysweeney">
+            <FaGithub />
+          </SocialLink>
+          <SocialLink to="https://twitter.com/barrysweeneydev">
+            <FaTwitter />
+          </SocialLink>
+          <SocialLink to="https://www.linkedin.com/in/barry-sweeney-819022189/">
+            <FaLinkedin />
+          </SocialLink>
+          <SocialLink to="https://stackoverflow.com/users/story/9472445">
+            <FaStackOverflow />
+          </SocialLink>
+        </ul>
         <GatsbyLogo />
       </footer>
     </div>

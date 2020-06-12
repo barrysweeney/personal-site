@@ -4,20 +4,33 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Img from "gatsby-image"
 import { graphql } from "gatsby"
+import styled from "styled-components"
+
+const ProjectWrapper = styled.div`
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-gap: 10px;
+  padding: 5px;
+  border-bottom: 1px solid grey;
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+  }
+`
+const TallScreenshotWrapper = styled.div`
+  grid-column: 2;
+  @media (max-width: 640px) {
+    grid-column: 1;
+  }
+`
+
+const TechnologyUsedWrapper = styled.div`
+  grid-column: 1;
+`
 
 function Project(props) {
   return (
-    <div
-      className="project"
-      style={{
-        display: `grid`,
-        gridTemplateColumns: `1fr auto`,
-        gridGap: `10px`,
-        padding: `5px`,
-        borderBottom: `1px solid grey`,
-      }}
-    >
-      <div>
+    <ProjectWrapper>
+      <div className="description">
         <h3>{props.title}</h3>
         <a href={props.github}>
           <p>Github Repo</p>
@@ -26,19 +39,27 @@ function Project(props) {
           <p>Live Site</p>
         </a>
         {props.description}
+      </div>
+      {props.wideImage ? (
+        <div style={{ width: `100%`, gridColumn: 1 }}>
+          <Img fluid={props.wideImage.childImageSharp.fluid} />
+          <br />
+        </div>
+      ) : null}
+
+      {props.data ? (
+        <TallScreenshotWrapper>
+          <Img fixed={props.data.childImageSharp.fixed} />{" "}
+        </TallScreenshotWrapper>
+      ) : null}
+
+      <TechnologyUsedWrapper>
         <h4>Built with</h4>
         {props.icons.map(icon => (
           <Img fixed={icon.childImageSharp.fixed} key={icon.id} />
         ))}
-        {props.wideImage ? (
-          <div>
-            <Img fixed={props.wideImage.childImageSharp.fixed} />
-            <br />
-          </div>
-        ) : null}
-      </div>
-      {props.data ? <Img fixed={props.data.childImageSharp.fixed} /> : null}
-    </div>
+      </TechnologyUsedWrapper>
+    </ProjectWrapper>
   )
 }
 
@@ -148,8 +169,8 @@ export const query = graphql`
     decay: file(relativePath: { eq: "images/decay-app.png" }) {
       id
       childImageSharp {
-        fixed(width: 600, height: 300) {
-          ...GatsbyImageSharpFixed
+        fluid {
+          ...GatsbyImageSharpFluid
         }
       }
     }
