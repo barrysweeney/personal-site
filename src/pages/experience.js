@@ -16,7 +16,7 @@ function Job(props) {
 export default function Experience() {
   return (
     <Layout>
-      <SEO title="Barry Sweeney's work experience" />
+      <SEO title="Experience" />
       <Header headerText="My experience" />
       <Job
         company="Kainos"
