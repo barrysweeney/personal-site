@@ -6,7 +6,7 @@ import SEO from "../components/seo"
 export default function Contact() {
   return (
     <Layout>
-      <SEO title="Contact me" />
+      <SEO title="Contact" />
       <Header headerText="Reach out to me" />
       <p>
         Email:{" "}

@@ -49,14 +49,21 @@ function Project(props) {
 
       {props.data ? (
         <TallScreenshotWrapper>
-          <Img fixed={props.data.childImageSharp.fixed} />{" "}
+          <Img
+            fixed={props.data.childImageSharp.fixed}
+            style={{ borderRadius: `8px` }}
+          />{" "}
         </TallScreenshotWrapper>
       ) : null}
 
       <TechnologyUsedWrapper>
         <h4>Built with</h4>
         {props.icons.map(icon => (
-          <Img fixed={icon.childImageSharp.fixed} key={icon.id} />
+          <Img
+            fixed={icon.childImageSharp.fixed}
+            key={icon.id}
+            style={{ margin: 5 }}
+          />
         ))}
       </TechnologyUsedWrapper>
     </ProjectWrapper>
@@ -66,8 +73,12 @@ function Project(props) {
 export default function Portfolio({ data }) {
   return (
     <Layout>
-      <SEO title="My portfolio" />
+      <SEO title="Portfolio" />
       <Header headerText="My portfolio" />
+      <p>
+        All of my projects are available on{" "}
+        <a href="https://github.com/barrysweeney">my Github profile</a>
+      </p>
       <Project
         title="Topify"
         data={data.topify}
@@ -177,7 +188,7 @@ export const query = graphql`
     js: file(relativePath: { eq: "images/js-icon.png" }) {
       id
       childImageSharp {
-        fixed(width: 100, height: 100) {
+        fixed(width: 80, height: 80) {
           ...GatsbyImageSharpFixed
         }
       }
@@ -185,7 +196,7 @@ export const query = graphql`
     webpack: file(relativePath: { eq: "images/webpack-logo.png" }) {
       id
       childImageSharp {
-        fixed(width: 250, height: 100) {
+        fixed(width: 210, height: 90) {
           ...GatsbyImageSharpFixed
         }
       }

@@ -18,6 +18,12 @@ export default function Experience() {
     <Layout>
       <SEO title="Experience" />
       <Header headerText="My experience" />
+      <p>
+        All of my experience is listed on{" "}
+        <a href="https://www.linkedin.com/in/barry-sweeney-819022189/">
+          my LinkedIn profile
+        </a>
+      </p>
       <Job
         company="Kainos"
         date="One week student work experiences in July & October 2019"

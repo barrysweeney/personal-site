@@ -36,6 +36,7 @@ export default function Layout({ children }) {
       <header style={{ marginBottom: `1.5rem` }}>
         <ul style={{ listStyle: `none`, float: `right` }}>
           <ListLink to="/">Home</ListLink>
+          <ListLink to="/about">About</ListLink>
           <ListLink to="/experience">Experience</ListLink>
           <ListLink to="/portfolio/">Portfolio</ListLink>
           <ListLink to="/blog/">Blog</ListLink>
