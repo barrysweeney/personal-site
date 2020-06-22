@@ -3,10 +3,12 @@ module.exports = {
     title: `Barry Sweeney`,
     description: `Personal site with portfolio and blog.`,
     author: `barrysweeneydev`,
+    siteUrl: `https://www.barrysweeney.com`,
   },
   plugins: [
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-source-filesystem`,
