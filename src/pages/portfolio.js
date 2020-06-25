@@ -43,6 +43,10 @@ function Project(props) {
       {props.wideImage ? (
         <div style={{ width: `100%`, gridColumn: 1 }}>
           <Img fluid={props.wideImage.childImageSharp.fluid} />
+          {props.secondWideImage ? (
+            <Img fluid={props.secondWideImage.childImageSharp.fluid} />
+          ) : null}
+
           <br />
         </div>
       ) : null}
@@ -79,6 +83,21 @@ export default function Portfolio({ data }) {
         All of my projects are available on{" "}
         <a href="https://github.com/barrysweeney">my Github profile</a>
       </p>
+      <Project
+        title="Jiu-Jitsu Companion"
+        data={data.bjjgameplan}
+        github="https://github.com/barrysweeney/bjj-companion/"
+        demo="https://jiu-jitsu-companion.netlify.app/"
+        description={
+          <div>
+            MERN stack app to track jiu-jitsu progress, create a gameplan, and
+            take notes
+          </div>
+        }
+        icons={[data.mongodb, data.react, data.node]}
+        wideImage={data.bjjprogress}
+        secondWideImage={data.bjjnotes}
+      />
       <Project
         title="Topify"
         data={data.topify}
@@ -137,6 +156,30 @@ export default function Portfolio({ data }) {
 
 export const query = graphql`
   query {
+    bjjgameplan: file(relativePath: { eq: "images/bjj-gameplan-app.png" }) {
+      id
+      childImageSharp {
+        fixed(width: 200, height: 400) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    bjjprogress: file(relativePath: { eq: "images/bjj-progress-app.png" }) {
+      id
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    bjjnotes: file(relativePath: { eq: "images/bjj-notes-app.png" }) {
+      id
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
     topify: file(relativePath: { eq: "images/topify-app.png" }) {
       id
       childImageSharp {
