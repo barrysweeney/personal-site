@@ -33,29 +33,31 @@ There are some walls of code that I've included in dropdowns, the emphasis is le
 
 ## Table of Contents
 
-<!-- - [The finshed project](#the-finshed-project)
+- [The finshed project](#the-finshed-project)
 - [What this is not](#what-this-is-not)
-- [What this is](#what-this-is) -->
-
+- [What this is](#what-this-is)
 - [Initial Ideas](#initial-ideas)
 - [create-react-app](#create-react-app)
 - [Main Components](#main-components)
 - [Layout Component](#layout-component)
-- [Gameplan Section Frontend and Backend Setup](#gameplan-section-frontend-and-backend-setup)
+- [Starting the Gameplan section](#starting-the-gameplan-section)
 - [Adding Bootstrap](#adding-bootstrap)
 - [express-generator](#express-generator)
 - [Models Code and Controllers Setup](#models-code-and-controllers-setup)
 - [Express server code and JWT Passport Authentication Strategy](#express-server-code-and-jwt-passport-authentication-strategy)
 - [Controller Code](#controller-code)
 - [Connecting to the database](#connecting-to-the-database)
+- [Testing protected routes with Postman](#testing-protected-routes-with-postman)
 - [Sign-up and log-in forms](#sign-up-and-log-in-forms)
 - [Gameplan Features](#gameplan-features)
 - [Saving Gameplans to the database](#saving-gameplans-to-the-database)
+- [More Gameplan Features](#more-gameplan-features)
 - [Progress Section](#progress-section)
 - [Basic style for the Progress section](#basic-style-for-the-progress-section)
 - [Notes Section](#notes-section)
 - [Styling everything](#styling-everything)
 - [Deployment](#deployment)
+- [Conclusion](#conclusion)
 
 ## Initial Ideas
 
@@ -163,7 +165,7 @@ function App() {
       <Notes />
       <Gameplan />
     </div>
-  )auto
+  )
 }
 
 export default App
