@@ -14,10 +14,6 @@ export default function Contact() {
           barrysweeney172@live.co.uk
         </a>
       </p>
-      <p>
-        Twitter:{" "}
-        <a href="https://twitter.com/barrysweeneydev">@barrysweeneydev</a>
-      </p>
     </Layout>
   )
 }

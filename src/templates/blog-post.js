@@ -12,7 +12,10 @@ export default function BlogPost({ data }) {
         description={post.frontmatter.description}
       />
       <h1>{post.frontmatter.title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: post.html }} style={{maxWidth: 700}}/>
+      <div
+        dangerouslySetInnerHTML={{ __html: post.html }}
+        style={{ maxWidth: 700 }}
+      />
     </Layout>
   )
 }

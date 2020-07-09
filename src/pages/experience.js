@@ -34,7 +34,7 @@ export default function Experience() {
         date="Nuffield Foundation Research Placement in Summer 2019"
         description="Authored research paper and
           presented the findings of an investigation into the application of
-          digit recognition software to electricty meters, which received a Gold
+          digit recognition software to electricity meters, which received a Gold
           Crest award."
       />
       <Job

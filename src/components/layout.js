@@ -51,14 +51,8 @@ export default function Layout({ children }) {
           <SocialLink to="https://github.com/barrysweeney">
             <FaGithub />
           </SocialLink>
-          <SocialLink to="https://twitter.com/barrysweeneydev">
-            <FaTwitter />
-          </SocialLink>
           <SocialLink to="https://www.linkedin.com/in/barry-sweeney-819022189/">
             <FaLinkedin />
-          </SocialLink>
-          <SocialLink to="https://stackoverflow.com/users/story/9472445">
-            <FaStackOverflow />
           </SocialLink>
         </ul>
         <GatsbyLogo />
