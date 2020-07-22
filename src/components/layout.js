@@ -1,11 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import {
-  FaGithub,
-  FaLinkedin,
-  FaTwitter,
-  FaStackOverflow,
-} from "react-icons/fa"
+import { FaGithub, FaLinkedin } from "react-icons/fa"
 import GatsbyLogo from "./gatsbyLogo"
 
 const ListLink = props => (

@@ -99,6 +99,22 @@ export default function Portfolio({ data }) {
         secondWideImage={data.bjjnotes}
       />
       <Project
+        title="Random Workout Generator"
+        data={data.workout}
+        github="https://github.com/barrysweeney/workout-app-helidon"
+        demo="https://random-workout-generator.netlify.app/"
+        description={
+          <div>
+            Oracle Helidon MP project including REST operations to obtain
+            exercises from a MySQL database. Docker was introduced to speed up
+            local development. The React frontend connects to a container
+            deployed to Heroku. The steps to reproduce this are included in the
+            README.
+          </div>
+        }
+        icons={[data.helidon, data.react, data.docker, data.mysql]}
+      />
+      <Project
         title="Topify"
         data={data.topify}
         github="https://github.com/barrysweeney/topify/"
@@ -128,27 +144,6 @@ export default function Portfolio({ data }) {
           <div>NodeJS social media app with passport-github authentication</div>
         }
         icons={[data.node, data.mongodb]}
-      />
-      <Project
-        title="Nuclear Decay Simulation"
-        github="https://github.com/barrysweeney/decay"
-        demo="https://barrysweeney.github.io/decay/"
-        description={
-          <div>
-            Visualizing the decay of radioactive nucleons as a function of both
-            time and the decay probability using Chart.js
-          </div>
-        }
-        icons={[data.js]}
-        wideImage={data.decay}
-      />
-      <Project
-        title="Battleship"
-        github="https://github.com/barrysweeney/battleship"
-        demo="https://barrysweeney.github.io/battleship/"
-        description={<div>Single player battleship game</div>}
-        icons={[data.js, data.webpack]}
-        data={data.battleship}
       />
     </Layout>
   )
@@ -180,6 +175,14 @@ export const query = graphql`
         }
       }
     }
+    workout: file(relativePath: { eq: "images/workout-app.png" }) {
+      id
+      childImageSharp {
+        fixed(width: 200, height: 400) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
     topify: file(relativePath: { eq: "images/topify-app.png" }) {
       id
       childImageSharp {
@@ -204,6 +207,30 @@ export const query = graphql`
         }
       }
     }
+    mysql: file(relativePath: { eq: "images/mysql-logo.png" }) {
+      id
+      childImageSharp {
+        fixed(width: 167, height: 86) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    docker: file(relativePath: { eq: "images/docker-logo.png" }) {
+      id
+      childImageSharp {
+        fixed(width: 130, height: 110) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    helidon: file(relativePath: { eq: "images/helidon-logo.png" }) {
+      id
+      childImageSharp {
+        fixed(width: 220, height: 105) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
     node: file(relativePath: { eq: "images/node-icon.png" }) {
       id
       childImageSharp {
@@ -216,38 +243,6 @@ export const query = graphql`
       id
       childImageSharp {
         fixed(width: 100, height: 100) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-    decay: file(relativePath: { eq: "images/decay-app.png" }) {
-      id
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    js: file(relativePath: { eq: "images/js-icon.png" }) {
-      id
-      childImageSharp {
-        fixed(width: 80, height: 80) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-    webpack: file(relativePath: { eq: "images/webpack-logo.png" }) {
-      id
-      childImageSharp {
-        fixed(width: 210, height: 90) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-    battleship: file(relativePath: { eq: "images/battleship-app.png" }) {
-      id
-      childImageSharp {
-        fixed(width: 290, height: 430) {
           ...GatsbyImageSharpFixed
         }
       }
