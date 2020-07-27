@@ -1,12 +1,11 @@
 ---
 title: Creating my first MERN site
-date: 2020-06-26
+date: 2020-06-26T00:00:00.000Z
 description: Using MongoDB, Express, React and Node to create a Jiu-Jitsu Companion app
 ---
-
 ## The finshed project
 
-[Source Code](https://github.com/barrysweeney/bjj-companion)  
+[Source Code](https://github.com/barrysweeney/bjj-companion)\
 [Live Site](https://jiu-jitsu-companion.netlify.app/)
 
 <details>
@@ -33,41 +32,41 @@ There are some walls of code that I've included in dropdowns, the emphasis is le
 
 ## Table of Contents
 
-- [The finshed project](#the-finshed-project)
-- [What this is not](#what-this-is-not)
-- [What this is](#what-this-is)
-- [Initial Ideas](#initial-ideas)
-- [create-react-app](#create-react-app)
-- [Main Components](#main-components)
-- [Layout Component](#layout-component)
-- [Starting the Gameplan section](#starting-the-gameplan-section)
-- [Adding Bootstrap](#adding-bootstrap)
-- [express-generator](#express-generator)
-- [Models Code and Controllers Setup](#models-code-and-controllers-setup)
-- [Express server code and JWT Passport Authentication Strategy](#express-server-code-and-jwt-passport-authentication-strategy)
-- [Controller Code](#controller-code)
-- [Connecting to the database](#connecting-to-the-database)
-- [Testing protected routes with Postman](#testing-protected-routes-with-postman)
-- [Sign-up and log-in forms](#sign-up-and-log-in-forms)
-- [Gameplan Features](#gameplan-features)
-- [Saving Gameplans to the database](#saving-gameplans-to-the-database)
-- [More Gameplan Features](#more-gameplan-features)
-- [Progress Section](#progress-section)
-- [Basic style for the Progress section](#basic-style-for-the-progress-section)
-- [Notes Section](#notes-section)
-- [Styling everything](#styling-everything)
-- [Deployment](#deployment)
-- [Conclusion](#conclusion)
+* [The finshed project](#the-finshed-project)
+* [What this is not](#what-this-is-not)
+* [What this is](#what-this-is)
+* [Initial Ideas](#initial-ideas)
+* [create-react-app](#create-react-app)
+* [Main Components](#main-components)
+* [Layout Component](#layout-component)
+* [Starting the Gameplan section](#starting-the-gameplan-section)
+* [Adding Bootstrap](#adding-bootstrap)
+* [express-generator](#express-generator)
+* [Models Code and Controllers Setup](#models-code-and-controllers-setup)
+* [Express server code and JWT Passport Authentication Strategy](#express-server-code-and-jwt-passport-authentication-strategy)
+* [Controller Code](#controller-code)
+* [Connecting to the database](#connecting-to-the-database)
+* [Testing protected routes with Postman](#testing-protected-routes-with-postman)
+* [Sign-up and log-in forms](#sign-up-and-log-in-forms)
+* [Gameplan Features](#gameplan-features)
+* [Saving Gameplans to the database](#saving-gameplans-to-the-database)
+* [More Gameplan Features](#more-gameplan-features)
+* [Progress Section](#progress-section)
+* [Basic style for the Progress section](#basic-style-for-the-progress-section)
+* [Notes Section](#notes-section)
+* [Styling everything](#styling-everything)
+* [Deployment](#deployment)
+* [Conclusion](#conclusion)
 
 ## Initial Ideas
 
 Firstly, I'll layout my ideas for the app, which may or may not all come to fruition.
 
-- Use the MERN stack to build a Jiu-Jitsu companion app.
-- Users can create a gameplan (what to do when in each position during a roll)
-- Users can save their notes for each class and go back to review
-- Users can track their progress (hours trained, belt level, etc)
-- Users can create an account (Passport authentication, Bcrypt to Hash password)
+* Use the MERN stack to build a Jiu-Jitsu companion app.
+* Users can create a gameplan (what to do when in each position during a roll)
+* Users can save their notes for each class and go back to review
+* Users can track their progress (hours trained, belt level, etc)
+* Users can create an account (Passport authentication, Bcrypt to Hash password)
 
 I spent a while trying to figure out how I'm going to "connect" the frontend and backend but decided I'll cross that bridge when I come to it.
 
@@ -601,8 +600,7 @@ npx express-generator
 npm install
 ```
 
-The folder structure now looks like this:
-![Folder structure showing the files generator by the express-generator command inside the backend folder](express-generator-file-structure.png)
+The folder structure now looks like this: ![Folder structure showing the files generator by the express-generator command inside the backend folder](express-generator-file-structure.png)
 
 I'll head into bin/www and change the port number from 3000 to 9000 as the frontend will be on 3000
 
@@ -970,22 +968,14 @@ exports.gameplan_create_post = function (req, res, next) {
 
 I'll now start setting up the database.
 
-I'll log in to MongoDB Atlas and create a new project:
-![MongoDB Atlas Projects page showing "New Project" button](atlas-projects.png)
-![MongoDB Atlas "Create a Project" page showing the input project name "JiuJitsuCompanion"](atlas-create-project.png)
-I'll then start creating a new cluster:
-![MongoDB Atlas Clusters page showing "Build a Cluster" button](atlas-create-cluster.png)
-After following the steps to create a free tier cluster with the default settings I'll start the connection process:
-![MongoDB Atlas Cluster page showing "connect", "metrics" and "collections" buttons](cluster-buttons.png)
-I'll whitelist all IP addresses for now. This should be changed when I know the IP address of where the request will come from after deployment:
-![MongoDB Atlas Cluster Connection page showing the IP address section where the IP Adress "0.0.0.0/0" has been enterred](ip-address.png)
-I'll then create a MongoDB User and select "Connect your application" and select the Node.js driver and copy the provided connection string:
+I'll log in to MongoDB Atlas and create a new project: ![MongoDB Atlas Projects page showing "New Project" button](atlas-projects.png) ![MongoDB Atlas "Create a Project" page showing the input project name "JiuJitsuCompanion"](atlas-create-project.png) I'll then start creating a new cluster:
+![MongoDB Atlas Clusters page showing "Build a Cluster" button](atlas-create-cluster.png) After following the steps to create a free tier cluster with the default settings I'll start the connection process:
+![MongoDB Atlas Cluster page showing "connect", "metrics" and "collections" buttons](cluster-buttons.png) I'll whitelist all IP addresses for now. This should be changed when I know the IP address of where the request will come from after deployment:
+![MongoDB Atlas Cluster Connection page showing the IP address section where the IP Adress "0.0.0.0/0" has been enterred](ip-address.png) I'll then create a MongoDB User and select "Connect your application" and select the Node.js driver and copy the provided connection string:
 
 ![MongoDB Atlas Cluster connection page showing the Node.js driver selected and the connection string to be copied](cluster-connect.png)
 
-I'll then go into the cluster's collections and create a new database:
-![MongoDB Atlas Collections page showing buttons to "Load a Sample Dataset" or "Add My Own Data"](new-database.png)
-![MongoDB Atlas Create Database popup bos showing the database name "JiuJitsuCompanion" enterred and the collection name "Collection0"](db-create.png)
+I'll then go into the cluster's collections and create a new database: ![MongoDB Atlas Collections page showing buttons to "Load a Sample Dataset" or "Add My Own Data"](new-database.png) ![MongoDB Atlas Create Database popup bos showing the database name "JiuJitsuCompanion" enterred and the collection name "Collection0"](db-create.png)
 
 With the database setup I'll create a .env file with a `MONGODB_URI`, `SECRET_KEY`, and `SESSION_SECRET`
 
@@ -1183,14 +1173,10 @@ Here I'm presenting the login form. If the user needs to create an account they 
 
 Now I should get back to work on the gameplan functionality; allowing users to save their gameplans, add positions, etc.
 
-- Adding a new position should save the current. When saved, I can add its position and move to the Gameplan's state.
-
-- The positions and moves arrays in state can then be saved to the database. When the app is started they can be brought back in.
-
-- The components should conditionally render the database info or defaults.
-
-- The positionCount will also need saved as an array of this length is mapped over
-  to render the positions and arrows.
+* Adding a new position should save the current. When saved, I can add its position and move to the Gameplan's state.
+* The positions and moves arrays in state can then be saved to the database. When the app is started they can be brought back in.
+* The components should conditionally render the database info or defaults.
+* The positionCount will also need saved as an array of this length is mapped over to render the positions and arrows.
 
 In tackling the feature that adding a new position will save the current position to the parent components state, I've come up with the follwing solution.
 
@@ -1383,12 +1369,12 @@ To peek behind the scenes, we can use the React Developer Tools add-on to view t
 ![React Developer Tools panel showing the state of the Gameplan component which is
 "{
   "positionCount": 2,
-  "positions": [
+  "positions": \[
     "Closed Guard"
-  ],
-  "moves": [
+  \],
+  "moves": \[
     "Butterfly Sweep"
-  ]
+  \]
 }"](gameplan-state.png)
 
 I'll change the automatic saving when adding a new position and instead make it so the user has to explicitly click to save the position before adding a new position. This should fix the current bug where the last component won't be saved or will be undefined when stored in the database.
@@ -1945,7 +1931,6 @@ class Gameplan extends Component {
 }
 
 // ...
-
 ```
 
 </details>
@@ -1981,7 +1966,6 @@ export class Position extends Component {
     );
   }
 }
-
 ```
 
 </details>
@@ -2001,18 +1985,18 @@ I'll delete the remaining position just to show how the option to add a new posi
 
 I'd like to do a few more things with the gameplan, I'll leave them to later but just take note of them now:
 
-- Constrain the user input to letters and a select few special characters like `&` or `/`
-- Add styling like a trash can icon for deleting
-- Don't allow empty positions
+* Constrain the user input to letters and a select few special characters like `&` or `/`
+* Add styling like a trash can icon for deleting
+* Don't allow empty positions
 
 ## Progress Section
 
 For now I'll move on the progress tracking section. I'm not entirely sure what I actually want this section to be so I'll take some time to brainstorm:
 
-- Increment hours trained
-- See hours trained by week/month/year/total with comparison
-- Maybe a graph
-- Possibly a seperate total for competitions, seminars etc
+* Increment hours trained
+* See hours trained by week/month/year/total with comparison
+* Maybe a graph
+* Possibly a seperate total for competitions, seminars etc
 
 I'm also thinking total hours is going to be difficult as people may have been training for years and have no clue how much hours they've put in. Instead I might just have monthly hours trained where the counter resets each month, encouraging a mindset of trying to beat the previous months hours trained.
 
@@ -2768,8 +2752,7 @@ The folders on the backend now look like this:
 
 I'll now create the first note:
 
-![Part of a webpage showing a heading with the text "New Note" and a text area with the content "This is the first note!" and a butotn with the text "Save"](first-note.png)
-And saving it...
+![Part of a webpage showing a heading with the text "New Note" and a text area with the content "This is the first note!" and a butotn with the text "Save"](first-note.png) And saving it...
 ![Part of a webpage showing a heading with the text "New Note", an empty text area to enter the note and a button with the text "Save". Below this is a saved note with the date of "Tue 23rd Jun 2020" displayed and the text below is "This is the first note!"](save-note.png)
 
 And with that, the site's basic functionality is wrapped up, there's now code for all 3 sections. The gameplan section was definitely the toughest of the lot. The Progress section was about as difficult as I thought it would be. The final Notes section was actually a lot easier and took much less time than I thought it would.
@@ -2840,4 +2823,4 @@ in App.js and replace `process.env.BACKEND_URI` with the actual backend URI. I a
 
 ## Conclusion
 
-As I learn more and find the personal need, I'll likely go back and add more features while cleaning up the code as I go. When I have some more experience under my belt I'd also like to add tests.
+As I learn more and find the personal need, I'll likely go back and add more features, cleaning up the code as I go. When I have some more experience under my belt I'd also like to add tests.
