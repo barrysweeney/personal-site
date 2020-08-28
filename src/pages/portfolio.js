@@ -178,7 +178,7 @@ export const query = graphql`
     obscurify: file(relativePath: { eq: "images/obscurify-portrait.png" }) {
       id
       childImageSharp {
-        fixed(width: 200, height: 400) {
+        fixed(width: 200, height: 408) {
           ...GatsbyImageSharpFixed
         }
       }
