@@ -91,7 +91,7 @@ export default function Portfolio({ data }) {
         description={
           <div>
             MERN stack app to track jiu-jitsu progress, create a gameplan, and
-            take notes
+            take notes.
           </div>
         }
         icons={[data.mongodb, data.react, data.node]}
@@ -115,25 +115,17 @@ export default function Portfolio({ data }) {
         icons={[data.helidon, data.react, data.docker, data.mysql]}
       />
       <Project
-        title="Topify"
-        data={data.topify}
-        github="https://github.com/barrysweeney/topify/"
-        demo="https://clever-lamport-50d143.netlify.app/"
+        title="Obscurify"
+        data={data.obscurify}
+        github="https://github.com/barrysweeney/obscurify/"
+        demo="https://obscurify.netlify.app/"
         description={
           <div>
-            React App using the Spotify Web API that lets you:
-            <ul>
-              <li>View your top artist and track</li>
-              <li>
-                Search for and play 30 second previews of artists, tracks,
-                albums, playlists, shows, and episodes
-              </li>
-              <li>View your library of albums and playlists</li>
-              <li>Create new playlists with a custom cover image</li>
-            </ul>
+            React App using the Spotify Web API to find the least popular song for an artist.
           </div>
         }
         icons={[data.react, data.node]}
+        wideImage={data.obscurifywide}
       />
       <Project
         title="Topbook"
@@ -141,7 +133,7 @@ export default function Portfolio({ data }) {
         github="https://github.com/barrysweeney/TOPBOOK"
         demo="https://calm-falls-42453.herokuapp.com/"
         description={
-          <div>NodeJS social media app with passport-github authentication</div>
+          <div>NodeJS social media app with passport-github authentication.</div>
         }
         icons={[data.node, data.mongodb]}
       />
@@ -183,11 +175,19 @@ export const query = graphql`
         }
       }
     }
-    topify: file(relativePath: { eq: "images/topify-app.png" }) {
+    obscurify: file(relativePath: { eq: "images/obscurify-portrait.png" }) {
       id
       childImageSharp {
         fixed(width: 200, height: 400) {
           ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    obscurifywide: file(relativePath: { eq: "images/obscurify-landscape.png" }) {
+      id
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
         }
       }
     }
