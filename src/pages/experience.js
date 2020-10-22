@@ -44,15 +44,14 @@ export default function Experience() {
       />
       <Job
         company="Papa G's Pizza"
-        date="September 2017 - April 2019"
+        date="September 2017 - "
         description="Building interpersonal skills while working in various
 roles in a high-pressure environment."
       />
 
       <Header headerText="My education" />
       <p>
-        Currently studying at Queen's University Belfast for BSc Computer
-        Science
+        Currently studying at Queen's University Belfast for BEng Software Engineering
       </p>
     </Layout>
   )
