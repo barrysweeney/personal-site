@@ -107,3 +107,109 @@ The main file of todays tutorial, XtoY.py will
 4. output cisual network view
 
 Let's get to work.
+
+## Implementing X to Y using Z
+
+We can now move on to implementing our network using x and y.
+
+Start by using Downloads to get the source code and exmaples then open up test-image.py and follow along:
+
+```python
+import X...
+import y...
+import z...
+import T as t ...
+```
+
+We start of by importing our required packages. Notable imports include:
+
+* config
+
+  controls input
+* y
+
+  does this
+
+Let's move on to parsing our arguments
+
+```python
+cpifvePINFVW.parse(vfov)
+```
+
+* line 20
+
+  grabs soknnw
+* line 26
+
+  does something
+
+```python
+cpifvePINFVW.parse(vfov)
+```
+
+* line 30
+
+  grabs soknnw
+* line 46
+
+  uses matplotlib to output figure
+
+Congrats! Now let's see the results of our hard work in the next section
+
+## Results of doing X and Y
+
+Let's open a terminal and enter the following command
+
+```shell
+$ python xy-test.py
+```
+
+![final results image comparison](folder-structure.png "final results image comparison")
+
+Note: Are you getting this error:
+
+TYperror C not found?
+
+If so make sure you have the correct version of X isntalled
+
+The figure displays a montage of our results and we can see that X has done Y
+
+## What's Next?
+
+![](folder-structure.png)
+
+You can get a grasp of other concepts by checking out my other blog posts such as
+
+* 1
+* 2
+* 3
+
+You'll find code exmaples to help you
+
+* x
+* y
+* z
+
+[Click here to access content and check out other projects](#)
+
+## Summary
+
+In this tutorial we learned how to do X with Y.
+
+For future reference you can check out
+
+* x
+* y
+* z
+
+In the future we'll cover
+
+* 1
+* 2
+* 3
+* 4
+* 5
+
+Stay tuned, you don't want to miss out!
+
+[Click here to get a free curated resource guide of hand-picked material by siging up for the newletter](#)
