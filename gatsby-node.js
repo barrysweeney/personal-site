@@ -13,6 +13,15 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   }
 }
 
+exports.onCreatePage = async ({ page, actions: { deletePage } }) => {
+  if (page.path.match(/^\/experience/)) {
+    deletePage(page)
+  }
+  if (page.path.match(/^\/about/)) {
+    deletePage(page)
+  }
+}
+
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 

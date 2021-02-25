@@ -1,5 +1,5 @@
 ---
-title: Blog post directed at developers in the style of pyimagesearch
+title: Lego kit style how to guide
 date: 2021-02-17T12:53:27.821Z
 description: lorem ipsum
 ---
