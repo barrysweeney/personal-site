@@ -19,13 +19,13 @@ You might be wondering
 
 You sure can, **just read on to find out how.**
 
-Also if you can relate to any of these then this guide is *definitely*
+Also, if you can relate to any of these then this guide is *definitely*
 for you.
 
 - If you want to learn some Docker and Selenium basics in a fun project before moving on to more complex Docker Compose
   and automated testing applications.
 - If you're a new developer stuck in [tutorial purgatory](https://www.freecodecamp.org/news/escape-tutorial-purgatory/)
-  who wants to wrap their head around more challenging concepts then you can go deeper down the rabbit hole by following
+  who wants to wrap their head around more challenging concepts, then you can go deeper down the rabbit hole by following
   the links throughout the guide.
 - If you're a student or are learning to code and searching for a project to talk about in interviews to help get your
   foot through the door.
@@ -53,7 +53,7 @@ Looking for source code? \
 Searching Album of The Year using Python, PySelenium, and Docker
 ================================================================
 
-Firstly we'll setup our remote Selenium WebDriver with Docker run. This will save us from downloading the driver
+Firstly we'll set up our remote Selenium WebDriver with Docker run. This will save us from downloading the driver
 ourselves and dealing with executable path configurations, or running our own Selenium server locally.
 
 Next we'll tell our Python code how to access our driver.
@@ -63,13 +63,13 @@ the [Album of the Year website](https://www.albumoftheyear.org/).
 
 We'll wrap up with a discussion of our results and how we could take this further with a frontend interface.
 
-- [Containerized Selenium Container](#selenium-container)
-- [Configuring your development environment](#dev-env)
+- [Containerized Selenium Container](#containerized-selenium-webdriver)
+- [Configuring your development environment](#configuring-your-development-environment)
 - [Project Structure](#project-structure)
-- [Coding our PySelenium album searching bot](#coding)
-- [Results from our PySelenium bot](#results)
+- [Coding our PySelenium album searching bot](#programming-our-pyselenium-album-searching-bot)
+- [Results from our PySelenium bot](#results-of-our-pyselenium-aoty-searching-bot)
 - [What's Next?](#whats-next)
-- [Troubleshooting](#troubleshooting)
+- [Troubleshooting](#bonus-troubleshooting)
 
 Containerized Selenium webdriver?
 ---------------------------------
@@ -88,14 +88,14 @@ The question then becomes
 
 > *Is there an easier way?*
 
-Of course we
+Of course, we
 could [run a remote WebDriver server from the command line with a jar file](https://www.selenium.dev/documentation/en/remote_webdriver/remote_webdriver_server/)
 , but we can also use [Docker Selenium](https://github.com/SeleniumHQ/docker-selenium).
 
 Configuring your development environment
 ----------------------------------------
 
-If you want to follow along to the tutorial you can take some time to setup your environment by installing Docker using
+If you want to follow along to the tutorial you can take some time to set up your environment by installing Docker using
 either of these guides
 
 - [Install Docker Engine on Linux](https://docs.docker.com/engine/install/)
@@ -115,7 +115,7 @@ Now let's look at the project:
 
 ![Folder structure showing app folder with main.py and venv folder](folder-structure.png)
 
-As we can see, we're not dealing with anything too complicated here so it should be a nice project to get up and running
+As we can see, we're not dealing with anything too complicated here, so it should be a nice project to get up and running
 with if you're new to PySelenium (or just really want to know what albums were released on your birthday).
 
 Let's get to work.
@@ -126,7 +126,7 @@ Programming our PySelenium album searching bot
 We can now move on to programming our PySelenium bot to interact with the Album of The Year site via a Dockerized
 Selenium WebDriver.
 
-I like to start by creating a new Python project with a Virtual Environment in PyCharm but you can use any IDE or text
+I like to start by creating a new Python project with a Virtual Environment in PyCharm, but you can use any IDE or text
 editor you prefer. You can set up your own environment if your editor doesn't automatically configure it for you by
 executing the command `venv`:
 
@@ -168,9 +168,7 @@ os.system(
 This command starts a standalone Firefox container. For other browsers and a description of why `-v /dev/shm:/dev/shm `
 is necessary you can visit the [Docker Selenium Page](https://github.com/SeleniumHQ/docker-selenium#standalone).
 
-We've named the container "my-selenium-container" so we can remove it at the end of our program.
-
-Excuse the following wall of code but it's actually very important. When we start our container we need to wait for it
+Excuse the following wall of code, but it's actually very important. When we start our container we need to wait for it
 to be in a state where it's ready to provide the services we need to use it as our remote webdriver.
 
 ```python
@@ -186,7 +184,7 @@ while not ready:
         continue
 ```
 
-Essentially, we keep hitting the status endpoint until it says it's ready and then we can move on with the rest of our
+Essentially, we keep hitting the status endpoint until it says it's ready, and then we can move on with the rest of our
 Python script.
 
 ```python
@@ -241,7 +239,7 @@ explanation of `arguments[0]`
 
 We're not quite finished with this while loop just yet, we need to do two things:
 
-- **except StaleElementReferenceException** - our WebElement can be destroyed and re-rendered in the DOM so we'll need
+- **except StaleElementReferenceException** - our WebElement can be destroyed and re-rendered in the DOM, so we'll need
   to retry by using
   `continue` if our reference becomes
   stale. [This StackOverflow answer by user Ardesco](https://stackoverflow.com/a/16244739/9472445) describes the
@@ -265,7 +263,7 @@ while not all_albums_loaded:
         all_albums_loaded = True
 ```
 
-We can store all albums being displayed in a variable now so we can easily iterate through them.
+We can store all albums being displayed in a variable now, so we can easily iterate through them.
 
 ```python
 albums = driver.find_elements_by_class_name('albumBlock')
@@ -367,7 +365,7 @@ project and ideas about where this could go next.
 
 I was motivated to create this project because I couldn't find a site that could be used to search for albums by a
 specific release date. I'll be designing the frontend for this program in
-an [upcoming post](../../guide-pt-2/aoty-guide-p2/index.html) and showing how you can deploy it so you can use and share
+an [upcoming post](https://www.barrysweeney.com/aoty-guide-p2/) and mention how you can deploy it, so you can use and share
 it with others.
 
 [Click here for part 2 of this series.](https://www.barrysweeney.com/aoty-guide-p2/)
@@ -377,7 +375,7 @@ Stay tuned to [my blog](https://www.barrysweeney.com/blog/), you don't want to m
 Bonus: Troubleshooting
 ----------------------
 
-Here's some resources for resolving common errors you might run into along the way in this guide or in your own
+Here are some resources for resolving common errors you might run into along the way in this guide or in your own
 explorations.
 
 - `requests.exceptions.ConnectionError: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))`
@@ -393,16 +391,16 @@ explorations.
   [this post by James Gallagher on Career Karma](https://careerkarma.com/blog/python-pip-command-not-found/). It may be
   as simple as changing `pip` to `pip3` or you may need to actually install pip3, for example with apt-get
   `sudo apt-get -y install python3-pip`
-- `StaleElementReferenceException` - our WebElement can be destroyed and re-rendered in the DOM so we'll need to retry
+- `StaleElementReferenceException` - our WebElement can be destroyed and re-rendered in the DOM, so we'll need to retry
   by using `continue` if our reference becomes
   stale. [This StackOverflow answer by user Ardesco](https://stackoverflow.com/a/16244739/9472445) describes the
   situation more clearly. We can catch this exception in an
   `except` block and tell our code to retry a certain operation until the exception doesn't occur. You can see
-  [the example we've used in this guide](#stale-element) where our solution was to use the `continue` keyword inside
+  the example we've used in this guide where our solution was to use the `continue` keyword inside
   a `while` loop.
-- `Element is not clickable at point (x,y) because another element obscures             it`
+- `Element is not clickable at point (x,y) because another element obscures it`
     - You can see [this StackOverflow answer by user RemcoW](https://stackoverflow.com/a/37880313/9472445) for more
-      details and an explanation of our solution in this guide which was to use
+      details, and an explanation of our solution in this guide which was to use
       `driver.execute_script("arguments[0].click();", element)`
       as opposed to the `click()` method of the
       `WebElement` object returned by
