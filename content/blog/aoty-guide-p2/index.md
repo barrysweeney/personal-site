@@ -71,7 +71,7 @@ We'll wrap up with a discussion of our results and how we could take this furthe
 - [What's Next?](#whats-next)
 - [Troubleshooting](#troubleshooting)
 
-Configuring your development environment {#dev-env}
+Configuring your development environment 
 ----------------------------------------
 
 If you want to follow along to the tutorial you can take some time to setup your environment by installing Docker using
@@ -291,7 +291,7 @@ render() {
 ```
 We can now move on to programming our Flask backend.
 
-Flask webserver backend {#backend}
+Flask webserver backend 
 -----------------------
 
 We're essentially rewriting the code from [part 1](https://www.barrysweeney.com/aoty-guide-p1/) of the guide but I'll go
@@ -593,7 +593,7 @@ Another possible challenge to take on would be deployment using services such as
 
 Stay tuned to [my blog](https://www.barrysweeney.com/blog/), you don't want to miss out!
 
-Bonus: Troubleshooting {#troubleshooting}
+Bonus: Troubleshooting
 ----------------------
 
 Here's some resources for resolving common errors you might run into along the way in this guide or in your own
