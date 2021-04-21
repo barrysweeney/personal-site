@@ -6,20 +6,20 @@ description: Searching Album of The Year using Flask, Selenium, Docker, and Reac
 
 [Click here for post's source code](https://github.com/barrysweeney/1-click-startup/tree/master/guides-and-posts/album-of-the-day)
 
-[Click here for part 1 of this series.](../../guide-pt-1/aoty-guide-p1/index.html)
+[Click here for part 1 of this series.](https://www.barrysweeney.com/aoty-guide-p1/)
 
 In this tutorial we'll design an app to find out which albums were released on a specific day. But you'll learn so much
 more along the way...
 
 ![logos for Album Of The Year, Python, Selenium, and Docker](company-logos.png)
 
-In [part 1](../../guide-pt-1/aoty-guide-p1/index.html) we answered the question
+In [part 1](https://www.barrysweeney.com/aoty-guide-p1/) we answered the question
 
 > *"Can I find out which albums were released on my birthday?"*
 
 You sure can, **just read on to find out how.**
 
-In [part 1 of this guide](../../guide-pt-1/aoty-guide-p1/index.html) we brought up that if you can relate to any of
+In [part 1 of this guide](https://www.barrysweeney.com/aoty-guide-p1/) we brought up that if you can relate to any of
 these then you're
 *definitely* in the right place.
 
@@ -294,7 +294,7 @@ We can now move on to programming our Flask backend.
 Flask webserver backend {#backend}
 -----------------------
 
-We're essentially rewriting the code from [part 1](../../guide-pt-1/aoty-guide-p1/index.html) of the guide but I'll go
+We're essentially rewriting the code from [part 1](https://www.barrysweeney.com/aoty-guide-p1/) of the guide but I'll go
 over the code here too so it isn't required you've read our first part.
 
 A quick way to get up and running is to create a new directory on the terminal with `mkdir` and open it with VS Code
