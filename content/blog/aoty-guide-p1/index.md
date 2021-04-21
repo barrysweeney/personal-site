@@ -1,6 +1,7 @@
 ---
-title: Searching Album of The Year using Python, PySelenium, and Docker date: 2021-04-21T00:00:00.000Z  
-description: Searching Album of The Year using Flask, Selenium, Docker, and React to find albums by release date
+title: Searching Album of The Year using Python, PySelenium, and Docker  
+date: 2021-04-21T00:00:00.000Z  
+description: Searching Album of The Year using Python, PySelenium, and Docker to find albums by release date
 ---
 
 [Click here for post's source code](https://github.com/barrysweeney/1-click-startup/tree/master/guides-and-posts/album-of-the-day)
