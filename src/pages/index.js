@@ -9,13 +9,10 @@ export default function Home() {
     <Layout>
       <SEO title="Home" />
       <Header headerText="Barry Sweeney" />
-      <span style={{ fontWeight: 700 }}>Software Engineer | DIY Musician? </span>
+      <span style={{ fontWeight: 700 }}>Software Engineer </span>
       <p>
-        I don't really use social media so I'm going old school and carving out my little space on the web here.
-      </p>
-
-      <p>
-        I guess I'll just use this place to share stuff. Who knows.
+        Hi, welcome to my personal site. Just going to be sharing coding projects, and maybe even some music in the
+        future.
       </p>
     </Layout>
   )
