@@ -8,6 +8,8 @@ description: Searching Album of The Year using Python, PySelenium, and Docker to
 
 [Click here for part 2 of this series.](https://www.barrysweeney.com/aoty-guide-p2/)
 
+[![Screenshot from video tutorial version of the guide](video.png)](https://youtu.be/S6gee91Q5gc)
+
 In this tutorial you will learn how to find out which albums were released on a specific day. But you'll learn so much
 more along the way...
 
