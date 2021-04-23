@@ -8,6 +8,8 @@ description: Searching Album of The Year using Flask, Selenium, Docker, and Reac
 
 [Click here for part 1 of this series.](https://www.barrysweeney.com/aoty-guide-p1/)
 
+[![Screenshot from video tutorial version of the guide](video-link.png)](https://youtu.be/fU2Ar1WFJRI)
+
 In this tutorial we'll design an app to find out which albums were released on a specific day. But you'll learn so much
 more along the way...
 
