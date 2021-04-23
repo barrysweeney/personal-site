@@ -251,7 +251,7 @@ As we mentioned earlier... From [w3schools - What is Bootstrap?]():
 
 We can open the `aoty-frontend` folder in the terminal and run
 
-    npm install bootstrap-react bootstrap`
+    npm install react-bootstrap bootstrap
 
 Inside the `<head>` tag of `public/index.html` we can include the Bootstrap CDN link
 
