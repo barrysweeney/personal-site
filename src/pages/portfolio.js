@@ -84,6 +84,19 @@ export default function Portfolio({ data }) {
         <a href="https://github.com/barrysweeney">my Github profile</a>
       </p>
       <Project
+        title="Which Stranger Things character am I?"
+        data={data.strangerthingsvertical}
+        github="https://github.com/barrysweeney/upside-down/"
+        demo="https://upsidedownbackend.herokuapp.com/login"
+        description={
+          <div>
+            Angular App using Spotify Web API to find which Stranger Things character the user is most like
+          </div>
+        }
+        icons={[data.angular, data.ts]}
+        wideImage={data.strangerthingshorizontal}
+      />
+      <Project
         title="Jiu-Jitsu Companion"
         data={data.bjjgameplan}
         github="https://github.com/barrysweeney/bjj-companion/"
@@ -143,6 +156,22 @@ export default function Portfolio({ data }) {
 
 export const query = graphql`
   query {
+    strangerthingshorizontal: file(relativePath: { eq: "images/strangerthings-hrizontal.PNG" }) {
+      id
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    strangerthingsvertical: file(relativePath: { eq: "images/strangerthings-vertical.png" }) {
+      id
+      childImageSharp {
+        fixed(width: 200, height: 400) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
     bjjgameplan: file(relativePath: { eq: "images/bjj-gameplan-app.png" }) {
       id
       childImageSharp {
