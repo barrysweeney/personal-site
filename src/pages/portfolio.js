@@ -164,7 +164,7 @@ export const query = graphql`
         }
       }
     }
-    strangerthingsvertical: file(relativePath: { eq: "images/strangerthings-vertical.png" }) {
+    strangerthingsvertical: file(relativePath: { eq: "images/strangerthings-vertical.PNG" }) {
       id
       childImageSharp {
         fixed(width: 200, height: 400) {
