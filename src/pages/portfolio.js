@@ -95,6 +95,7 @@ export default function Portfolio({ data }) {
         }
         icons={[data.angular, data.ts]}
         wideImage={data.strangerthingshorizontal}
+        secondWideImage={data.strangerthingssecond}
       />
       <Project
         title="Jiu-Jitsu Companion"
@@ -165,6 +166,14 @@ export const query = graphql`
       }
     }
     strangerthingsvertical: file(relativePath: { eq: "images/strangerthings-vertical.PNG" }) {
+      id
+      childImageSharp {
+        fixed(width: 200, height: 400) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    strangerthingssecond: file(relativePath: { eq: "images/strangerthings-second.PNG" }) {
       id
       childImageSharp {
         fixed(width: 200, height: 400) {
