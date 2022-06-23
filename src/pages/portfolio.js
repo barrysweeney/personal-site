@@ -156,7 +156,7 @@ export default function Portfolio({ data }) {
 
 export const query = graphql`
   query {
-    strangerthingshorizontal: file(relativePath: { eq: "images/strangerthings-hrizontal.PNG" }) {
+    strangerthingshorizontal: file(relativePath: { eq: "images/strangerthings-horizontal.PNG" }) {
       id
       childImageSharp {
         fluid {
