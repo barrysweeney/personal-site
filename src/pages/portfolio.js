@@ -236,6 +236,22 @@ export const query = graphql`
         }
       }
     }
+    angular: file(relativePath: { eq: "images/angular.png" }) {
+      id
+      childImageSharp {
+        fixed(width: 100, height: 100) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    ts: file(relativePath: { eq: "images/ts.png" }) {
+      id
+      childImageSharp {
+        fixed(width: 100, height: 100) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
     mysql: file(relativePath: { eq: "images/mysql-logo.png" }) {
       id
       childImageSharp {
