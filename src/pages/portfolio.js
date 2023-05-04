@@ -35,9 +35,6 @@ function Project(props) {
         <a href={props.github}>
           <p>Github Repo</p>
         </a>
-        <a href={props.demo}>
-          <p>Live Site</p>
-        </a>
         {props.description}
       </div>
       {props.wideImage ? (
@@ -87,7 +84,6 @@ export default function Portfolio({ data }) {
         title="Which Stranger Things character am I?"
         data={data.strangerthingsvertical}
         github="https://github.com/barrysweeney/upside-down/"
-        demo="https://upsidedownbackend.herokuapp.com/login"
         description={
           <div>
             Angular App using Spotify Web API to find which Stranger Things character the user is most like
@@ -100,7 +96,6 @@ export default function Portfolio({ data }) {
         title="Jiu-Jitsu Companion"
         data={data.bjjgameplan}
         github="https://github.com/barrysweeney/bjj-companion/"
-        demo="https://jiu-jitsu-companion.netlify.app/"
         description={
           <div>
             MERN stack app to track jiu-jitsu progress, create a gameplan, and
@@ -115,7 +110,6 @@ export default function Portfolio({ data }) {
         title="Random Workout Generator"
         data={data.workout}
         github="https://github.com/barrysweeney/workout-app-helidon"
-        demo="https://random-workout-generator.netlify.app/"
         description={
           <div>
             Oracle Helidon MP project including REST operations to obtain
@@ -131,7 +125,6 @@ export default function Portfolio({ data }) {
         title="Obscurify"
         data={data.obscurify}
         github="https://github.com/barrysweeney/obscurify/"
-        demo="https://obscurify.netlify.app/"
         description={
           <div>
             React App using the Spotify Web API to find the least popular song for an artist.
@@ -144,7 +137,6 @@ export default function Portfolio({ data }) {
         title="Topbook"
         data={data.topbook}
         github="https://github.com/barrysweeney/TOPBOOK"
-        demo="https://calm-falls-42453.herokuapp.com/"
         description={
           <div>NodeJS social media app with passport-github authentication.</div>
         }

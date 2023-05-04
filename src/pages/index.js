@@ -9,10 +9,9 @@ export default function Home() {
     <Layout>
       <SEO title="Home" />
       <Header headerText="Barry Sweeney" />
-      <span style={{ fontWeight: 700 }}>Software Engineer</span>
+      <span style={{ fontWeight: 700 }}>Scholarship Software Engineer/ Final Year University Student</span>
       <p>
-        Hi, welcome to my personal site. Just going to be sharing coding projects, and maybe even some music in the
-        future.
+        Hi, welcome to my personal site. Just going to be sharing some coding projects.
       </p>
     </Layout>
   )
